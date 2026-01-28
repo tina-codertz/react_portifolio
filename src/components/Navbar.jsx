@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  ActivityIcon,
-  BookAIcon,
-  Contact2Icon,
-  HomeIcon,
+  Home,
+  User,
+  Sparkles,
+  Briefcase,
+  Mail,
   Menu,
-  SparklesIcon,
   X,
 } from "lucide-react";
 
@@ -13,11 +13,11 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home", icon: HomeIcon },
-    { name: "About", href: "#about", icon: BookAIcon },
-    { name: "Skills", href: "#skills", icon: SparklesIcon },
-    { name: "Projects", href: "#projects", icon: ActivityIcon },
-    { name: "Contact", href: "#contacts", icon: Contact2Icon },
+    { name: "Home", href: "#home", icon: Home },
+    { name: "About", href: "#about", icon: User },
+    { name: "Skills", href: "#skills", icon: Sparkles },
+    { name: "Projects", href: "#projects", icon: Briefcase },
+    { name: "Contact", href: "#contact", icon: Mail },
   ];
 
   const handleNavClick = (e, href) => {
@@ -34,10 +34,9 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
           {/* Logo */}
           <div className="text-2xl font-bold text-blue-600">
-            Portfolio
+            C.J.Kimario
           </div>
 
           {/* Desktop Navigation */}
