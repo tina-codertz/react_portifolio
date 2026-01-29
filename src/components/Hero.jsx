@@ -24,8 +24,9 @@ export function Hero() {
         {/* main heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
           Hi, I'm{" "}
+           <span className="text-blue-600 bg-clip-text">Christina Kimario</span>
         </h1>
-        <span className="text-blue-600 bg-clip-text">Christina Kimario</span>
+       
 
         {/* subheading */}
         <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-8">
