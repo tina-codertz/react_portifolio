@@ -17,7 +17,9 @@ export function Navbar() {
     { name: "About", href: "#about", icon: User },
     { name: "Skills", href: "#skills", icon: Sparkles },
     { name: "Projects", href: "#projects", icon: Briefcase },
+    {name: "Certifications", href: "#certifications", icon: Briefcase },
     { name: "Contact", href: "#contact", icon: Mail },
+
   ];
 
   const handleNavClick = (e, href) => {

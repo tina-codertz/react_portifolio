@@ -1,159 +1,219 @@
 import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, User, Users } from 'lucide-react';
 
 export function Projects() {
-  // Projects data
+  // Projects data - organized by category
   const projects = [
+    // Personal Projects
     {
-      title: 'E-Commerce Platform',
+      title: 'Personal Portfolio Website',
       description:
-        'A full-featured e-commerce application with shopping cart, payment integration, and admin dashboard. Built with React and modern best practices.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image:
-        'https://images.unsplash.com/photo-1557821552-17105176677c?w=500&q=80',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      title: 'Task Management App',
-      description:
-        'Collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
-      image:
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      title: 'Weather Dashboard',
-      description:
-        'Beautiful weather application with detailed forecasts, interactive maps, and location-based services using modern APIs.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
-      image:
-        'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&q=80',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      title: 'Fitness Tracker',
-      description:
-        'Mobile-first fitness tracking app with workout plans, progress tracking, and social features for motivation.',
-      technologies: ['React Native', 'Node.js', 'PostgreSQL', 'JWT'],
-      image:
-        'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80',
-      liveUrl: '#',
-      githubUrl: '#',
-    },
-    {
-      title: 'Portfolio CMS',
-      description:
-        'Content management system for creative professionals to showcase their work with customizable themes and SEO optimization.',
-      technologies: ['React', 'Next.js', 'GraphQL', 'Prisma'],
+        'Designed and developed a responsive portfolio using React and modern UI animations to showcase skills, projects, and experience.',
+      technologies: ['React', 'Tailwind CSS', 'JavaScript'],
       image:
         'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&q=80',
       liveUrl: '#',
       githubUrl: '#',
+      category: 'personal',
     },
     {
-      title: 'Real-Time Chat App',
+      title: 'Mobile Login & Authentication App',
       description:
-        'Modern chat application with real-time messaging, file sharing, and group conversations powered by WebSocket.',
-      technologies: ['React', 'Socket.io', 'Express', 'MongoDB'],
+        'Built a Flutter-based mobile app with authentication screens and API integration for secure user login and registration.',
+      technologies: ['Flutter', 'Dart', 'REST API'],
       image:
-        'https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=500&q=80',
+        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80',
       liveUrl: '#',
       githubUrl: '#',
+      category: 'personal',
+    },
+    {
+      title: 'Air Quality Monitoring Platform',
+      description:
+        'Designed a cloud-based IoT data flow for real-time air quality data collection and visualization (Concept & Prototype).',
+      technologies: ['IoT', 'Cloud Architecture', 'Data Visualization'],
+      image:
+        'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
+      liveUrl: '#',
+      githubUrl: '#',
+      category: 'personal',
+    },
+
+    // Organizational Projects
+    {
+      title: 'University Web Systems Project',
+      description:
+        'Collaborated in a team to design and implement a web application, contributing to frontend development and system documentation.',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Team Collaboration'],
+      image:
+        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80',
+      githubUrl: '#',
+      category: 'organizational',
+    },
+    {
+      title: 'Group Research & Technical Documentation',
+      description:
+        'Worked with peers to research cloud architectures and present technical findings in a structured academic format.',
+      technologies: ['Cloud Computing', 'Research', 'Documentation'],
+      image:
+        'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&q=80',
+      category: 'organizational',
     },
   ];
+
+  // Separate projects by category
+  const personalProjects = projects.filter(
+    (p) => p.category === 'personal'
+  );
+  const organizationalProjects = projects.filter(
+    (p) => p.category === 'organizational'
+  );
+
+  // Project Card Component
+  const ProjectCard = ({ project }) => (
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+      {/* Image */}
+      <div className="h-48 overflow-hidden bg-gray-200">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        {/* Category Badge */}
+        <div className="mb-3">
+          {project.category === 'personal' ? (
+            <span className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+              <User size={14} />
+              Personal Project
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
+              <Users size={14} />
+              Team Project
+            </span>
+          )}
+        </div>
+
+        <h3 className="text-xl font-bold text-gray-900 mb-3">
+          {project.title}
+        </h3>
+
+        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.technologies.map((tech, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Links */}
+        <div className="flex gap-4">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm"
+            >
+              <ExternalLink size={16} />
+              Live Demo
+            </a>
+          )}
+
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium text-sm"
+            >
+              <Github size={16} />
+              Code
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Featured Projects
+            Projects & Work
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            A selection of projects that showcase my skills and experience
+            A showcase of personal initiatives and collaborative team projects
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
-            >
-              {/* Image */}
-              <div className="h-48 overflow-hidden bg-gray-200">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                  )}
-
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium text-sm"
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                  )}
-                </div>
-              </div>
+        {/* Personal Projects */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="bg-blue-100 p-3 rounded-lg">
+              <User className="text-blue-600" size={24} />
             </div>
-          ))}
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                Personal Projects
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Projects built independently to sharpen skills and explore ideas
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {personalProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
+        </div>
+
+        {/* Organizational Projects */}
+        <div>
+          <div className="flex items-center gap-3 mb-8">
+            <div className="bg-green-100 p-3 rounded-lg">
+              <Users className="text-green-600" size={24} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                Organizational & Team Projects
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Collaborative projects completed as part of an organization or
+                university
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {organizationalProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-600 mb-4">Want to see more of my work?</p>
           <a
-            href="https://github.com/tina-codertz"
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"

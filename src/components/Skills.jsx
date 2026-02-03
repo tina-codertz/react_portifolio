@@ -1,44 +1,78 @@
 import React from 'react';
-import { Code, Smartphone, Server, Wrench } from 'lucide-react';
-
+import { Code, Smartphone, Wrench, Cloud, Database, Sparkles } from 'lucide-react';
 
 export function Skills() {
-  // Organized skills data
+  // Organized skills data - easy to maintain and update
   const skillsData = [
     {
       title: 'Web Development',
       icon: <Code size={32} />,
       color: 'blue',
-      skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Tailwind CSS']
+      skills: ['React', 'JavaScript', 'HTML', 'CSS'],
     },
     {
-      title: 'Mobile Development',
+      title: 'Mobile App Development',
       icon: <Smartphone size={32} />,
       color: 'green',
-      skills: ['React Native', 'iOS', 'Android', 'Swift', 'Mobile UI/UX']
+      skills: ['Flutter'],
     },
     {
-      title: 'Backend',
-      icon: <Server size={32} />,
-      color: 'purple',
-      skills: ['Node.js', 'Express', 'REST APIs', 'MongoDB', 'PostgreSQL']
-    },
-    {
-      title: 'Tools & Others',
+      title: 'UI/UX Design & Prototyping',
       icon: <Wrench size={32} />,
+      color: 'purple',
+      skills: ['Figma'],
+    },
+    {
+      title: 'Version Control & Collaboration',
+      icon: <Code size={32} />,
       color: 'orange',
-      skills: ['Git & GitHub', 'VS Code', 'Figma', 'Responsive Design', 'Agile']
-    }
+      skills: ['Git', 'GitHub'],
+    },
+    {
+      title: 'Cloud & Deployment Basics',
+      icon: <Cloud size={32} />,
+      color: 'blue',
+      skills: ['Vercel', 'Heroku'],
+    },
+    {
+      title: 'Data Handling & APIs',
+      icon: <Database size={32} />,
+      color: 'green',
+      skills: ['REST APIs', 'JSON', 'API Integration'],
+    },
+    {
+      title: 'AI-assisted Development',
+      icon: <Sparkles size={32} />,
+      color: 'purple',
+      skills: ['AI Research Tools', 'Code Assistants'],
+    },
   ];
 
-  // Helper function for color classes
+  // Helper function to get color classes based on category
   const getColorClasses = (color) => {
     const colors = {
-      blue: { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-600' },
-      green: { bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-600' },
-      purple: { bg: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-600' },
-      orange: { bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-600' }
+      blue: {
+        bg: 'bg-blue-50',
+        text: 'text-blue-600',
+        border: 'border-blue-600',
+      },
+      green: {
+        bg: 'bg-green-50',
+        text: 'text-green-600',
+        border: 'border-green-600',
+      },
+      purple: {
+        bg: 'bg-purple-50',
+        text: 'text-purple-600',
+        border: 'border-purple-600',
+      },
+      orange: {
+        bg: 'bg-orange-50',
+        text: 'text-orange-600',
+        border: 'border-orange-600',
+      },
     };
+
     return colors[color];
   };
 
@@ -48,16 +82,16 @@ export function Skills() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Skills & Technologies
+            Technical & Professional Skills
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6" />
+          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {skillsData.map((category, index) => {
             const colors = getColorClasses(category.color);
 
@@ -67,10 +101,10 @@ export function Skills() {
                 className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
               >
                 {/* Icon */}
-                <div className={`${colors.bg} w-16 h-16 rounded-lg flex items-center justify-center mb-4`}>
-                  <div className={colors.text}>
-                    {category.icon}
-                  </div>
+                <div
+                  className={`${colors.bg} w-16 h-16 rounded-lg flex items-center justify-center mb-4`}
+                >
+                  <div className={colors.text}>{category.icon}</div>
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -80,10 +114,13 @@ export function Skills() {
                 {/* Skills List */}
                 <ul className="space-y-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <li key={skillIndex} className="text-gray-600 flex items-center">
+                    <li
+                      key={skillIndex}
+                      className="text-gray-600 flex items-center"
+                    >
                       <span
-                        className={`w-2 h-2 ${colors.bg} ${colors.border} border-2 rounded-full mr-3`}
-                      />
+                        className={`w-2 h-2 ${colors.bg} rounded-full mr-3 ${colors.border} border-2`}
+                      ></span>
                       {skill}
                     </li>
                   ))}
@@ -96,7 +133,7 @@ export function Skills() {
         {/* Footer Text */}
         <div className="mt-16 text-center">
           <p className="text-gray-600 text-lg">
-            Always learning and exploring new technologies to stay current
+            Always learning and exploring new technologies to stay current in this fast-paced field
           </p>
         </div>
       </div>
