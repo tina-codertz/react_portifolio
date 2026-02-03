@@ -27,11 +27,23 @@ export function Footer() {
             >
               About
             </a>
+             <a
+              href="#skills"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+            Skills
+            </a>
             <a
               href="#projects"
               className="text-gray-400 hover:text-white transition-colors"
             >
               Projects
+            </a>
+             <a
+              href="#certifications"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Certifications
             </a>
             <a
               href="#contact"
