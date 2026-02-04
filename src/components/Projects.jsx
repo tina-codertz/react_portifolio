@@ -19,12 +19,24 @@ export function Projects() {
       category: 'personal',
     },
     {
-      title: 'Mobile Login & Authentication App',
+      title: 'Instagram application clone ',
       description:
-        'Built a Flutter-based mobile app with authentication screens and API integration for secure user login and registration.',
-      technologies: ['Flutter', 'Dart', 'REST API'],
+        'Built a react-native-based mobile app with features like instagram where users can share post and follow each other',
+      technologies: ['React-native', 'JavaScript', 'REST API'],
       image:
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80',
+        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80',
+      liveUrl: '#',
+      githubUrl: '#',
+      category: 'personal',
+    },
+     {
+      title: 'e-ticketing platform ',
+      description:
+        'Built a react based application where users can book tickets for events and concerts',
+      technologies: ['React', 'Nodejs', 'REST API'],
+      image:
+    
+      'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=500&q=80',
       liveUrl: '#',
       githubUrl: '#',
       category: 'personal',

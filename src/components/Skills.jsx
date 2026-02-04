@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code, Smartphone, Wrench, Cloud, Database, Sparkles } from 'lucide-react';
 
+
 export function Skills() {
 
   const skillsData = [
@@ -8,13 +9,13 @@ export function Skills() {
       title: 'Web Development',
       icon: <Code size={32} />,
       color: 'blue',
-      skills: ['React', 'JavaScript', 'HTML', 'CSS'],
+      skills: ['React', 'JavaScript', 'Tailwind CSS'],
     },
     {
       title: 'Mobile App Development',
       icon: <Smartphone size={32} />,
       color: 'green',
-      skills: ['Flutter'],
+      skills: ['React Native', 'Flutter'],
     },
     {
       title: 'UI/UX Design & Prototyping',
@@ -32,20 +33,9 @@ export function Skills() {
       title: 'Cloud & Deployment Basics',
       icon: <Cloud size={32} />,
       color: 'blue',
-      skills: ['Vercel', 'Heroku'],
+      skills: ['Oracle', 'Vercel'],
     },
-    {
-      title: 'Data Handling & APIs',
-      icon: <Database size={32} />,
-      color: 'green',
-      skills: ['REST APIs', 'JSON', 'API Integration'],
-    },
-    {
-      title: 'AI-assisted Development',
-      icon: <Sparkles size={32} />,
-      color: 'purple',
-      skills: ['AI Research Tools', 'Code Assistants'],
-    },
+   
   ];
 
   // Helper function to get color classes based on category
@@ -86,7 +76,7 @@ export function Skills() {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Technologies and tools 
+            Technologies and tools I use to build and design applications
           </p>
         </div>
 

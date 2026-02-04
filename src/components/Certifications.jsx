@@ -4,40 +4,43 @@ import { Award, CheckCircle } from 'lucide-react';
 export function Certifications() {
   const certifications = [
     {
-      title: 'Web Development Training',
+      title: 'Design thinking & problem solving',
       description:
-        'Comprehensive training covering modern JavaScript, React fundamentals, and responsive design principles.',
+        'Comprehensive training on design thinking methodologies, user research, and problem-solving techniques.',
       topics: [
-        'Modern JavaScript',
-        'React Fundamentals',
-        'Responsive Design',
-        'Web Standards',
+        'Design Thinking Process',
+        'User Research',
+        'Ideation Techniques',
+        'Prototyping & Testing',
       ],
-      year: '2024',
+      year: '2025',
+      location:'Antwerp-Belgium',
     },
     {
-      title: 'Cloud Computing & Deployment Workshop',
+      title: 'Multimedia training',
       description:
-        'Hands-on training in server configuration basics, CI/CD concepts, and cloud deployment workflows.',
+        'The multimedia training program covered essential skills in graphic design, video editing, and animation using industry-standard software.',
       topics: [
-        'Server Configuration',
-        'CI/CD Concepts',
-        'Cloud Deployment',
-        'DevOps Basics',
+        'Graphic Design',
+        'Video Editing',
+        'Animation',
+        'Industry-Standard Software',
       ],
-      year: '2024',
+      year: '2025',
+      location:'Ardhi-University'
     },
     {
-      title: 'UI/UX Design with Figma',
+      title: 'DjangoCon Africa 2025 Workshop',
       description:
-        'Practical training in wireframing, prototyping, and user-centered design using industry-standard tools.',
+        'Intensive workshop on Django web development, covering advanced topics such as RESTful APIs, security best practices, and deployment strategies.',
       topics: [
-        'Wireframing',
-        'Prototyping',
-        'User-Centered Design',
-        'Design Systems',
+        'Django Framework',
+        'RESTful APIs',
+        'Security Best Practices',
+        'Deployment Strategies',
       ],
-      year: '2023',
+      year: '2025',
+      location:'Arusha-Tanzania'
     },
   ];
 
@@ -71,9 +74,15 @@ export function Certifications() {
                   <Award className="text-blue-600" size={28} />
                 </div>
                 {cert.year && (
-                  <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                    {cert.year}
-                  </span>
+                  <div className="flex flex-col-1 gap-2">
+                     <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                      {cert.location}
+                    </span>
+                    <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                      {cert.year}
+                    </span>
+                   
+                  </div>
                 )}
               </div>
 
