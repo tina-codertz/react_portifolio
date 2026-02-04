@@ -86,7 +86,7 @@ export function Skills() {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            Technologies and tools 
           </p>
         </div>
 

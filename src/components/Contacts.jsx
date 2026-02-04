@@ -1,10 +1,12 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
 export function Contacts() {
   const contactInfo = {
     email: 'christinakimario8@gmail.com',
     github: 'https://github.com/tina-codertz',
     linkedin: 'https://linkedin.com/in/ChristinaKimario',
+    instagram: 'https://instagram.com/_christinajustine',
+
   
   };
 
@@ -87,13 +89,13 @@ export function Contacts() {
               </a>
 
               <a
-                href={contactInfo.twitter}
+                href={contactInfo.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-14 h-14 bg-gray-100 rounded-full text-gray-700 hover:bg-blue-400 hover:text-white transform hover:scale-110 transition-all duration-300"
-                aria-label="Twitter"
+                aria-label="Instagram"
               >
-                <Twitter size={24} />
+                <Instagram size={24} />
               </a>
             </div>
 

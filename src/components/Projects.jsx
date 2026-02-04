@@ -1,5 +1,7 @@
 import React from 'react';
 import { ExternalLink, Github, User, Users } from 'lucide-react';
+import bucket from '../assets/bucket.png';
+import appointment from '../assets/appointment.png';
 
 export function Projects() {
   // Projects data - organized by category
@@ -36,27 +38,27 @@ export function Projects() {
         'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
       liveUrl: '#',
       githubUrl: '#',
-      category: 'personal',
+      category: 'organizational',
     },
 
     // Organizational Projects
     {
-      title: 'University Web Systems Project',
+      title: 'A collaborative bucket list web application',
       description:
         'Collaborated in a team to design and implement a web application, contributing to frontend development and system documentation.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Team Collaboration'],
+      technologies: ['React','Django', 'Team Collaboration','GitHub'],
       image:
-        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&q=80',
+        bucket,
       githubUrl: '#',
       category: 'organizational',
     },
     {
-      title: 'Group Research & Technical Documentation',
+      title: 'Appointment management system',
       description:
-        'Worked with peers to research cloud architectures and present technical findings in a structured academic format.',
-      technologies: ['Cloud Computing', 'Research', 'Documentation'],
+        'Worked with peers to develop a web-based appointment management system, focusing on user interface design and backend integration.',
+      technologies: ['React', 'Django', 'Github', 'Teamwork'],
       image:
-        'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&q=80',
+        appointment,
       category: 'organizational',
     },
   ];
@@ -196,8 +198,7 @@ export function Projects() {
                 Organizational & Team Projects
               </h3>
               <p className="text-gray-600 text-sm">
-                Collaborative projects completed as part of an organization or
-                university
+                Collaborative projects completed as part of academic teams in github
               </p>
             </div>
           </div>
