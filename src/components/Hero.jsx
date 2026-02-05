@@ -9,7 +9,7 @@ export function Hero() {
   };
 
   const handleProjectClick = () => {
-    const projectsSection = document.querySelector("#projeects");
+    const projectsSection = document.querySelector("#projects");
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-500 to-indigo-100 pt-6"
+      className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 to-indigo-100 pt-6"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-20 text-center">
         {/* main heading */}

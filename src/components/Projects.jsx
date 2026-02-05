@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink, Github, User, Users } from 'lucide-react';
 import bucket from '../assets/bucket.png';
 import appointment from '../assets/appointment.png';
+import ticket from '../assets/ticket.png';
 
 export function Projects() {
   // Projects data - organized by category
@@ -13,7 +14,7 @@ export function Projects() {
         'Designed and developed a responsive portfolio using React and modern UI animations to showcase skills, projects, and experience.',
       technologies: ['React', 'Tailwind CSS', 'JavaScript'],
       image:
-        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&q=80',
+        '',
       liveUrl: '#',
       githubUrl: '#',
       category: 'personal',
@@ -24,7 +25,7 @@ export function Projects() {
         'Built a react-native-based mobile app with features like instagram where users can share post and follow each other',
       technologies: ['React-native', 'JavaScript', 'REST API'],
       image:
-        'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80',
+        '',
       liveUrl: '#',
       githubUrl: '#',
       category: 'personal',
@@ -35,8 +36,7 @@ export function Projects() {
         'Built a react based application where users can book tickets for events and concerts',
       technologies: ['React', 'Nodejs', 'REST API'],
       image:
-    
-      'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=500&q=80',
+    ticket,
       liveUrl: '#',
       githubUrl: '#',
       category: 'personal',
@@ -49,7 +49,7 @@ export function Projects() {
       image:
         'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: '',
       category: 'organizational',
     },
 
@@ -61,7 +61,7 @@ export function Projects() {
       technologies: ['React','Django', 'Team Collaboration','GitHub'],
       image:
         bucket,
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Habrovan004/collaborative_bucket_lists',
       category: 'organizational',
     },
     {
@@ -71,6 +71,7 @@ export function Projects() {
       technologies: ['React', 'Django', 'Github', 'Teamwork'],
       image:
         appointment,
+      githubUrl: 'https://github.com/ByteUjamaa/Appointment',
       category: 'organizational',
     },
   ];

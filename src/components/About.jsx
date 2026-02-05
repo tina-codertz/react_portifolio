@@ -46,7 +46,7 @@ export function About() {
             </div>
 
             <div className="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-600">
-              <div className="text-3xl font-bold text-indigo-600 mb-2">20+</div>
+              <div className="text-3xl font-bold text-indigo-600 mb-2">5+</div>
               <div className="text=gray-700 font-medium">Projects Completed</div>
             </div>
           </div>
