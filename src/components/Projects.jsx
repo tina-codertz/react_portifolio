@@ -37,7 +37,7 @@ export function Projects() {
       technologies: ['React', 'Nodejs', 'REST API'],
       image:
     ticket,
-      liveUrl: '#',
+      
       githubUrl: 'https://github.com/tina-codertz/e-ticketing',
       category: 'personal',
     },
