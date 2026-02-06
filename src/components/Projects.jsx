@@ -15,7 +15,7 @@ export function Projects() {
       technologies: ['React', 'Tailwind CSS', 'JavaScript'],
       image:
         '',
-      liveUrl: '#',
+      
       githubUrl: 'https://github.com/tina-codertz/react_portifolio',
       category: 'personal',
     },
@@ -26,7 +26,7 @@ export function Projects() {
       technologies: ['React-native', 'JavaScript', 'REST API'],
       image:
         '',
-      liveUrl: '#',
+      
       githubUrl: 'https://github.com/tina-codertz/instagram_clone',
       category: 'personal',
     },
@@ -48,7 +48,7 @@ export function Projects() {
       technologies: ['IoT', 'Cloud Architecture', 'Data Visualization'],
       image:
         'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
-      liveUrl: '#',
+    
       githubUrl: 'https://github.com/goldprogrammer123/AIR-QUALITY-MONOTORING-SYSTEM',
       category: 'organizational',
     },
