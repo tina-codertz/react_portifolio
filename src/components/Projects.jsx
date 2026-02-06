@@ -16,7 +16,7 @@ export function Projects() {
       image:
         '',
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/tina-codertz/react_portifolio',
       category: 'personal',
     },
     {
@@ -27,7 +27,7 @@ export function Projects() {
       image:
         '',
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/tina-codertz/instagram_clone',
       category: 'personal',
     },
      {
@@ -38,7 +38,7 @@ export function Projects() {
       image:
     ticket,
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/tina-codertz/e-ticketing',
       category: 'personal',
     },
     {
@@ -49,7 +49,7 @@ export function Projects() {
       image:
         'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
       liveUrl: '#',
-      githubUrl: '',
+      githubUrl: 'https://github.com/goldprogrammer123/AIR-QUALITY-MONOTORING-SYSTEM',
       category: 'organizational',
     },
 
