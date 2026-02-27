@@ -42,6 +42,17 @@ export function Projects() {
       category: 'personal',
     },
     {
+      title: 'tanzania youth heath development organization website ',
+      description:
+        'a webiste for tanzania youth heath development organization where they can share their activities and events and also people can book tickets for their events',
+      technologies: ['React', "tailwibdcss"],
+      image:
+    ticket,
+      
+      githubUrl: 'https://github.com/tina-codertz/e-ticketing',
+      category: 'personal',
+    },
+    {
       title: 'Air Quality Monitoring Platform',
       description:
         'Designed a cloud-based IoT data flow for real-time air quality data collection and visualization (Concept & Prototype).',
