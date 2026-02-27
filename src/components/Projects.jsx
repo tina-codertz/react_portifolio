@@ -5,89 +5,89 @@ import appointment from '../assets/appointment.png';
 import ticket from '../assets/ticket.png';
 
 export function Projects() {
-  // Projects data - organized by category
   const projects = [
-    // Personal Projects
     {
+      id: 'portfolio-website',
       title: 'Personal Portfolio Website',
       description:
-        'Designed and developed a responsive portfolio using React and modern UI animations to showcase skills, projects, and experience.',
+        'Designed and developed a fully responsive portfolio website using React and modern UI animations to showcase skills, projects, and professional experience.',
       technologies: ['React', 'Tailwind CSS', 'JavaScript'],
-      image:
-        '',
-      
+      image: '',
       githubUrl: 'https://github.com/tina-codertz/react_portifolio',
+      liveUrl: '', // Add when deployed
       category: 'personal',
     },
     {
-      title: 'Instagram application clone ',
+      id: 'instagram-clone',
+      title: 'Instagram Application Clone',
       description:
-        'Built a react-native-based mobile app with features like instagram where users can share post and follow each other',
-      technologies: ['React-native', 'JavaScript', 'REST API'],
-      image:
-        '',
-      
+        'Built a React Native mobile application with core social features including post sharing, user authentication, and follow functionality.',
+      technologies: ['React Native', 'JavaScript', 'REST API'],
+      image: '',
       githubUrl: 'https://github.com/tina-codertz/instagram_clone',
-      category: 'personal',
-    },
-     {
-      title: 'e-ticketing platform ',
-      description:
-        'Built a react based application where users can book tickets for events and concerts',
-      technologies: ['React', 'Nodejs', 'REST API'],
-      image:
-    ticket,
-      
-      githubUrl: 'https://github.com/tina-codertz/e-ticketing',
+      liveUrl: '',
       category: 'personal',
     },
     {
-      title: 'tanzania youth heath development organization website ',
+      id: 'e-ticketing-platform',
+      title: 'E-Ticketing Platform',
       description:
-        'a webiste for tanzania youth heath development organization where they can share their activities and events and also people can book tickets for their events',
-      technologies: ['React', "tailwibdcss"],
-      image:
-    ticket,
-      
+        'Developed a full-stack event ticketing platform enabling users to browse events, book tickets, and manage reservations efficiently.',
+      technologies: ['React', 'Node.js', 'REST API'],
+      image: ticket,
       githubUrl: 'https://github.com/tina-codertz/e-ticketing',
+      liveUrl: '',
       category: 'personal',
     },
     {
+      id: 'tyhdo-website',
+      title: 'Tanzania Youth Health Development Organization Website',
+      description:
+        'Developed an official website for Tanzania Youth Health Development Organization to showcase activities, events, and enable online ticket booking.',
+      technologies: ['React', 'Tailwind CSS'],
+      image: '',
+      githubUrl: 'https://github.com/tina-codertz/cuddly-guacamole',
+      liveUrl: 'https://www.tyhdo.or.tz/',
+      category: 'personal',
+    },
+    {
+      id: 'air-quality-platform',
       title: 'Air Quality Monitoring Platform',
       description:
-        'Designed a cloud-based IoT data flow for real-time air quality data collection and visualization (Concept & Prototype).',
+        'Designed a cloud-based IoT architecture for real-time air quality data collection, processing, and visualization (Concept & Prototype).',
       technologies: ['IoT', 'Cloud Architecture', 'Data Visualization'],
       image:
         'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
-    
-      githubUrl: 'https://github.com/goldprogrammer123/AIR-QUALITY-MONOTORING-SYSTEM',
-      category: 'organizational',
-    },
-
-    // Organizational Projects
-    {
-      title: 'A collaborative bucket list web application',
-      description:
-        'Collaborated in a team to design and implement a web application, contributing to frontend development and system documentation.',
-      technologies: ['React','Django', 'Team Collaboration','GitHub'],
-      image:
-        bucket,
-      githubUrl: 'https://github.com/Habrovan004/collaborative_bucket_lists',
+      githubUrl:
+        'https://github.com/goldprogrammer123/AIR-QUALITY-MONITORING-SYSTEM',
+      liveUrl: '',
       category: 'organizational',
     },
     {
-      title: 'Appointment management system',
+      id: 'bucket-list-app',
+      title: 'Collaborative Bucket List Web Application',
       description:
-        'Worked with peers to develop a web-based appointment management system, focusing on user interface design and backend integration.',
-      technologies: ['React', 'Django', 'Github', 'Teamwork'],
-      image:
-        appointment,
+        'Collaborated within a development team to design and implement a bucket list web application, contributing to frontend features and documentation.',
+      technologies: ['React', 'Django', 'GitHub', 'Team Collaboration'],
+      image: bucket,
+      githubUrl:
+        'https://github.com/Habrovan004/collaborative_bucket_lists',
+      liveUrl: '',
+      category: 'organizational',
+    },
+    {
+      id: 'appointment-system',
+      title: 'Appointment Management System',
+      description:
+        'Worked with a team to develop a web-based appointment management system, focusing on user interface design and backend integration.',
+      technologies: ['React', 'Django', 'GitHub', 'Teamwork'],
+      image: appointment,
       githubUrl: 'https://github.com/ByteUjamaa/Appointment',
+      liveUrl: '',
       category: 'organizational',
     },
   ];
 
-  // Separate projects by category
   const personalProjects = projects.filter(
     (p) => p.category === 'personal'
   );
@@ -95,16 +95,22 @@ export function Projects() {
     (p) => p.category === 'organizational'
   );
 
-  // Project Card Component
   const ProjectCard = ({ project }) => (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-      {/* Image */}
-      <div className="h-48 overflow-hidden bg-gray-200">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-        />
+      
+      {/* Image Section with Fallback */}
+      <div className="h-48 overflow-hidden bg-gray-200 flex items-center justify-center">
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-300"
+          />
+        ) : (
+          <span className="text-gray-500 text-sm">
+            No Image Available
+          </span>
+        )}
       </div>
 
       {/* Content */}
@@ -134,9 +140,9 @@ export function Projects() {
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech, index) => (
+          {project.technologies.map((tech) => (
             <span
-              key={index}
+              key={tech}
               className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
             >
               {tech}
@@ -177,6 +183,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -205,8 +212,8 @@ export function Projects() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {personalProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+            {personalProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
@@ -222,23 +229,25 @@ export function Projects() {
                 Organizational & Team Projects
               </h3>
               <p className="text-gray-600 text-sm">
-                Collaborative projects completed as part of academic teams in github
+                Collaborative projects completed as part of academic and development teams.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {organizationalProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+            {organizationalProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12 pt-8 border-t border-gray-200">
-          <p className="text-gray-600 mb-4">Want to see more of my work?</p>
+          <p className="text-gray-600 mb-4">
+            Want to explore more of my work?
+          </p>
           <a
-            href="https://github.com"
+            href="https://github.com/tina-codertz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
@@ -247,6 +256,7 @@ export function Projects() {
             View All on GitHub
           </a>
         </div>
+
       </div>
     </section>
   );
