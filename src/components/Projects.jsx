@@ -47,7 +47,7 @@ export function Projects() {
       technologies: ['React', 'Django', 'REST API'],
       image: ticket,
       githubUrl: 'https://github.com/ByteUjamaa/team-learning-system',
-      liveUrl: 'tlms.live',
+      liveUrl: 'https://tlms.live',
       category: 'organizational',
     },
     {
