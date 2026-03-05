@@ -39,6 +39,17 @@ export function Projects() {
       liveUrl: '',
       category: 'personal',
     },
+      {
+      id: 'team management system',
+      title: 'Team Management System',
+      description:
+        'Developed a full-stack team management system enabling users to collaborate, track progress, and manage projects efficiently.',
+      technologies: ['React', 'Django', 'REST API'],
+      image: ticket,
+      githubUrl: 'https://github.com/ByteUjamaa/team-learning-system',
+      liveUrl: 'tlms.live',
+      category: 'organizational',
+    },
     {
       id: 'tyhdo-website',
       title: 'Tanzania Youth Health Development Organization Website',
