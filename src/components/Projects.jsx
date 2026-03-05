@@ -45,7 +45,7 @@ export function Projects() {
       description:
         'Developed a full-stack team management system enabling users to collaborate, track progress, and manage projects efficiently.',
       technologies: ['React', 'Django', 'REST API'],
-      image: ticket,
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80",
       githubUrl: 'https://github.com/ByteUjamaa/team-learning-system',
       liveUrl: 'https://tlms.live',
       category: 'organizational',
