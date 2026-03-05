@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
-import { ExternalLink, Github, User, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import React,{useState} from 'react';
+import { ExternalLink, Github, User, Users,ChevronDown,ChevronUp } from 'lucide-react';
 import bucket from '../assets/bucket.png';
 import appointment from '../assets/appointment.png';
 import ticket from '../assets/ticket.png';
 
 export function Projects() {
   const projects = [
-    // ... (your projects array remains unchanged)
     {
       id: 'portfolio-website',
       title: 'Personal Portfolio Website',
-      description: 'Designed and developed a fully responsive portfolio website using React and modern UI animations...',
+      description:
+        'Designed and developed a fully responsive portfolio website using React and modern UI animations to showcase skills, projects, and professional experience.',
       technologies: ['React', 'Tailwind CSS', 'JavaScript'],
       image: '',
       githubUrl: 'https://github.com/tina-codertz/react_portifolio',
-      liveUrl: '',
+      liveUrl: 'https://portifolio-chi-ochre.vercel.app/', // Add when deployed
       category: 'personal',
     },
     {
       id: 'instagram-clone',
       title: 'Instagram Application Clone',
-      description: 'Built a React Native mobile application with core social features...',
+      description:
+        'Built a React Native mobile application with core social features including post sharing, user authentication, and follow functionality.',
       technologies: ['React Native', 'JavaScript', 'REST API'],
       image: '',
       githubUrl: 'https://github.com/tina-codertz/instagram_clone',
@@ -30,24 +31,72 @@ export function Projects() {
     {
       id: 'e-ticketing-platform',
       title: 'E-Ticketing Platform',
-      description: 'Developed a full-stack event ticketing platform...',
+      description:
+        'Developed a full-stack event ticketing platform enabling users to browse events, book tickets, and manage reservations efficiently.',
       technologies: ['React', 'Node.js', 'REST API'],
       image: ticket,
       githubUrl: 'https://github.com/tina-codertz/e-ticketing',
       liveUrl: '',
       category: 'personal',
     },
-    {
+      {
       id: 'team management system',
       title: 'Team Management System',
-      description: 'Developed a full-stack team management system...',
+      description:
+        'Developed a full-stack team management system enabling users to collaborate, track progress, and manage projects efficiently.',
       technologies: ['React', 'Django', 'REST API'],
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80",
       githubUrl: 'https://github.com/ByteUjamaa/team-learning-system',
       liveUrl: 'https://tlms.live',
       category: 'organizational',
     },
-    // ... rest of your projects
+    {
+      id: 'tyhdo-website',
+      title: 'Tanzania Youth Health Development Organization Website',
+      description:
+        'Developed an official website for Tanzania Youth Health Development Organization to showcase activities, events, and enable online ticket booking.',
+      technologies: ['React', 'Tailwind CSS'],
+      image: 'h',
+      githubUrl: 'https://github.com/tina-codertz/cuddly-guacamole',
+      liveUrl: 'https://www.tyhdo.or.tz/',
+      category: 'personal',
+    },
+    {
+      id: 'air-quality-platform',
+      title: 'Air Quality Monitoring Platform',
+      description:
+        'Designed a cloud-based IoT architecture for real-time air quality data collection, processing, and visualization (Concept & Prototype).',
+      technologies: ['IoT', 'Cloud Architecture', 'Data Visualization'],
+      image:
+        'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80',
+      githubUrl:
+        'https://github.com/goldprogrammer123/AIR-QUALITY-MONITORING-SYSTEM',
+      liveUrl: '',
+      category: 'organizational',
+    },
+    {
+      id: 'bucket-list-app',
+      title: 'Collaborative Bucket List Web Application',
+      description:
+        'Collaborated within a development team to design and implement a bucket list web application, contributing to frontend features and documentation.',
+      technologies: ['React', 'Django', 'GitHub', 'Team Collaboration'],
+      image: bucket,
+      githubUrl:
+        'https://github.com/Habrovan004/collaborative_bucket_lists',
+      liveUrl: '',
+      category: 'organizational',
+    },
+    {
+      id: 'appointment-system',
+      title: 'Appointment Management System',
+      description:
+        'Worked with a team to develop a web-based appointment management system, focusing on user interface design and backend integration.',
+      technologies: ['React', 'Django', 'GitHub', 'Teamwork'],
+      image: appointment,
+      githubUrl: 'https://github.com/ByteUjamaa/Appointment',
+      liveUrl: '',
+      category: 'organizational',
+    },
   ];
 
   const personalProjects = projects.filter(p => p.category === 'personal');
