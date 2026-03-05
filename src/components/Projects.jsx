@@ -56,7 +56,7 @@ export function Projects() {
       description:
         'Developed an official website for Tanzania Youth Health Development Organization to showcase activities, events, and enable online ticket booking.',
       technologies: ['React', 'Tailwind CSS'],
-      image: '',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&q=80',
       githubUrl: 'https://github.com/tina-codertz/cuddly-guacamole',
       liveUrl: 'https://www.tyhdo.or.tz/',
       category: 'personal',
