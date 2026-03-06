@@ -39,6 +39,18 @@ export function Projects() {
       liveUrl: '',
       category: 'personal',
     },
+    {
+      id: 'ARU-innovation hub website',
+      title: 'ARU Innovation Hub Website',
+      description:
+        'Developed a modern website for the ARU Innovation Hub to showcase initiatives, events, and enable online engagement.',
+      technologies: ['React', 'Tailwind CSS'],
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14b87cf?w=500&q=80',
+      githubUrl: 'https://github.com/tina-codertz/innovation',
+      liveUrl: 'https://innovation-lab-rho.vercel.app/',
+      category: 'personal',
+    },
+    
       {
       id: 'team management system',
       title: 'Team Management System',
