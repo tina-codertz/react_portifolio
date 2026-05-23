@@ -1,63 +1,45 @@
 import React from "react";
+import { Heart } from "lucide-react";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const links = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gray-950 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Copyright */}
-          <div className="text-center md:text-left">
-            <p className="text-gray-400">
-              © {currentYear} C.J.kimario. All rights reserved.
-            </p>
+        <div className="flex flex-col items-center gap-6">
+          <a href="#home" className="text-xl font-extrabold tracking-tight text-gradient">
+            C.J.Kimario
+          </a>
+
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {links.map(({ name, href }) => (
+              <a
+                key={name}
+                href={href}
+                className="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200"
+              >
+                {name}
+              </a>
+            ))}
           </div>
 
-          {/* Quick Links */}
-          <div className="flex gap-6">
-            <a
-              href="#home"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              About
-            </a>
-             <a
-              href="#skills"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-            Skills
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Projects
-            </a>
-             <a
-              href="#certifications"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Certifications
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+          <div className="w-full max-w-xs h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
 
-          {/* Built With */}
-          <div className="text-center md:text-right">
-            <p className="text-gray-400 text-sm">
-              Built with React & Tailwind CSS
+          <div className="flex flex-col items-center gap-1 text-gray-500 text-xs">
+            <p className="flex items-center gap-1">
+              Built with <Heart size={12} className="text-accent-500" /> using React & Tailwind CSS
             </p>
+            <p>&copy; {currentYear} C.J.Kimario. All rights reserved.</p>
           </div>
         </div>
       </div>

@@ -1,129 +1,99 @@
-import React from 'react';
-import { Code, Smartphone, Wrench, Cloud, Database, Sparkles } from 'lucide-react';
-
+import React from "react";
+import { Code, Smartphone, Palette, GitBranch, Cloud } from "lucide-react";
 
 export function Skills() {
-
   const skillsData = [
     {
-      title: 'Web Development',
-      icon: <Code size={32} />,
-      color: 'blue',
-      skills: ['React', 'JavaScript', 'Tailwind CSS'],
+      title: "Web Development",
+      icon: Code,
+      gradient: "from-blue-500 to-cyan-400",
+      bgLight: "bg-blue-50",
+      textColor: "text-blue-600",
+      skills: ["React", "JavaScript", "Tailwind CSS"],
     },
     {
-      title: 'Mobile App Development',
-      icon: <Smartphone size={32} />,
-      color: 'green',
-      skills: ['React Native', 'Flutter'],
+      title: "Mobile Development",
+      icon: Smartphone,
+      gradient: "from-emerald-500 to-teal-400",
+      bgLight: "bg-emerald-50",
+      textColor: "text-emerald-600",
+      skills: ["React Native", "Flutter"],
     },
     {
-      title: 'UI/UX Design & Prototyping',
-      icon: <Wrench size={32} />,
-      color: 'purple',
-      skills: ['Figma'],
+      title: "UI/UX Design",
+      icon: Palette,
+      gradient: "from-violet-500 to-purple-400",
+      bgLight: "bg-violet-50",
+      textColor: "text-violet-600",
+      skills: ["Figma"],
     },
     {
-      title: 'Version Control & Collaboration',
-      icon: <Code size={32} />,
-      color: 'orange',
-      skills: ['Git', 'GitHub'],
+      title: "Version Control",
+      icon: GitBranch,
+      gradient: "from-orange-500 to-amber-400",
+      bgLight: "bg-orange-50",
+      textColor: "text-orange-600",
+      skills: ["Git", "GitHub"],
     },
     {
-      title: 'Cloud & Deployment Basics',
-      icon: <Cloud size={32} />,
-      color: 'blue',
-      skills: ['Oracle', 'Vercel'],
+      title: "Cloud & Deployment",
+      icon: Cloud,
+      gradient: "from-primary-500 to-primary-400",
+      bgLight: "bg-primary-50",
+      textColor: "text-primary-600",
+      skills: ["Oracle", "Vercel"],
     },
-   
   ];
 
-  // Helper function to get color classes based on category
-  const getColorClasses = (color) => {
-    const colors = {
-      blue: {
-        bg: 'bg-blue-50',
-        text: 'text-blue-600',
-        border: 'border-blue-600',
-      },
-      green: {
-        bg: 'bg-green-50',
-        text: 'text-green-600',
-        border: 'border-green-600',
-      },
-      purple: {
-        bg: 'bg-purple-50',
-        text: 'text-purple-600',
-        border: 'border-purple-600',
-      },
-      orange: {
-        bg: 'bg-orange-50',
-        text: 'text-orange-600',
-        border: 'border-orange-600',
-      },
-    };
-
-    return colors[color];
-  };
-
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-24 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Technical & Professional Skills
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+            Skills & Expertise
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <div className="w-12 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mb-6" />
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Technologies and tools I use to build and design applications
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillsData.map((category, index) => {
-            const colors = getColorClasses(category.color);
-
+            const IconComponent = category.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+                className="group relative bg-white rounded-2xl p-6 card-hover border border-gray-100"
               >
-                {/* Icon */}
-                <div
-                  className={`${colors.bg} w-16 h-16 rounded-lg flex items-center justify-center mb-4`}
-                >
-                  <div className={colors.text}>{category.icon}</div>
+                <div className={`absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                <div className={`${category.bgLight} w-12 h-12 rounded-xl flex items-center justify-center mb-5`}>
+                  <IconComponent className={category.textColor} size={24} />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
                   {category.title}
                 </h3>
 
-                {/* Skills List */}
-                <ul className="space-y-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <li
-                      key={skillIndex}
-                      className="text-gray-600 flex items-center"
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 bg-gray-50 text-gray-600 rounded-lg text-sm font-medium border border-gray-100"
                     >
-                      <span
-                        className={`w-2 h-2 ${colors.bg} rounded-full mr-3 ${colors.border} border-2`}
-                      ></span>
                       {skill}
-                    </li>
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Footer Text */}
         <div className="mt-16 text-center">
-          <p className="text-gray-600 text-lg">
-            Always learning and exploring new technologies to stay current in this fast-paced field
+          <p className="text-gray-400 text-sm italic">
+            Always learning and exploring new technologies to stay current
           </p>
         </div>
       </div>
